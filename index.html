@@ -14,18 +14,18 @@
             <canvas id="sensorAnalogico"></canvas>
         </div>
         <div style="width: 50%;">
-            <canvas id="sensorDigital"></canvas>
+            <canvas id="barChart"></canvas>
         </div>
-    </div>
 
     <script>
         var sensorAnalogico = new Chart(document.getElementById('sensorAnalogico').getContext('2d'), {
             type: 'line',
             data: {
                 datasets: [{
-                    label: 'Analogico',
+                    label: 'Temperatura da câmera 1 do entreposto',
                     borderColor: '#63B1BC',
-                    backgroundColor: '#ED145B'
+                    backgroundColor: '#ED145B',
+                    tension: 0.3
                 }]
             },
             options: {
@@ -43,32 +43,6 @@
                 },
             }
         });
-
-        var sensorDigital = new Chart(document.getElementById('sensorDigital').getContext('2d'), {
-            type: 'line',
-            data: {
-                datasets: [{
-                    label: 'Digital',
-                    borderColor: '#63B1BC',
-                    backgroundColor: '#0762C8'
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: '(0-1)'
-                        },
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
         var paginacao = {};
         var tempo = {};
 
